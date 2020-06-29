@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+
+import { DramaService} from '../../service/DramaService';
+import { DramaModel} from '../../models/Drama.model';
+
 @Component({
   selector: 'app-list-drama',
   templateUrl: './list-drama.component.html',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDramaComponent implements OnInit {
 
-  constructor() { }
+  dramas: any;
+  cargando = false;
+  constructor( private dramaService: DramaService) { }
 
   ngOnInit(): void {
+    this.cargando = true;
+    this.dramaService.getKdramas()
+    .subscribe( resp => {
+      this.dramas = resp;
+      this.cargando = false;
+    });
   }
 
 }

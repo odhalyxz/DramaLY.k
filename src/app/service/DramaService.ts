@@ -14,62 +14,37 @@ export class DramaService {
 
 
   constructor( private http: HttpClient ) { }
-  
   //  guardar la info en la DB
   async crearKdrama(drama: DramaModel ) {
     const asyncResult = await this.http.post(`${ this.url }/kdramas/new-Kdrama`, drama).toPromise();
     console.log(asyncResult);
-}
-
-  /*actualizarHeroe( drama: DramaModel ) {
-
-    const heroeTemp = {
-      ...heroe
-    };
-
-    delete heroeTemp.id;
-
-    return this.http.put(`${ this.url }/heroes/${ heroe.id }.json`, heroeTemp);
-
-
   }
+  // Obtener la lista de todos los dramas
 
-  borrarHeroe( id: string ) {
-
-    return this.http.delete(`${ this.url }/heroes/${ id }.json`);
-
-  }
-
-
-  getHeroe( id: string ) {
-
-    return this.http.get(`${ this.url }/heroes/${ id }.json`);
-
-  }
-
-
-  getHeroes() {
-    return this.http.get(`${ this.url }/heroes.json`)
+  getKdramas() {
+    // const asyncResult = await this.http.get(`${ this.url }/kdramas`).toPromise();
+    // return asyncResult;
+    return this.http.get(`${ this.url }/kdramas`)
             .pipe(
               map( this.crearArreglo ),
               delay(0)
             );
   }
+  private crearArreglo( kdramasObj: object ) {
 
-  private crearArreglo( heroesObj: object ) {
+    const kdramasList: DramaModel[] = [];
 
-    const heroes: HeroeModel[] = [];
+    Object.keys( kdramasObj ).forEach( key => {
+      
+      const kdrama: DramaModel = kdramasObj[key];
+      console.log('kdrama', kdrama);
+      console.log('key', key);
 
-    Object.keys( heroesObj ).forEach( key => {
-
-      const heroe: HeroeModel = heroesObj[key];
-      heroe.id = key;
-
-      heroes.push( heroe );
+      kdramasList.push( kdrama );
     });
 
 
-    return heroes;
+    return kdramasList;
 
-  }*/
+  }
 }
