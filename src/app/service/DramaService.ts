@@ -35,16 +35,10 @@ export class DramaService {
     const kdramasList: DramaModel[] = [];
 
     Object.keys( kdramasObj ).forEach( key => {
-      
       const kdrama: DramaModel = kdramasObj[key];
       console.log('kdrama', kdrama);
-      console.log('key', key);
-
       kdramasList.push( kdrama );
     });
-
-
     return kdramasList;
-
   }
 }
