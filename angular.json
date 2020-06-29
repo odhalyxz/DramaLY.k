@@ -123,6 +123,10 @@
   },
   "defaultProject": "proyect-K",
   "cli": {
+<<<<<<< HEAD
     "analytics": "f4d1a52a-3da5-4673-8241-b1e6c1ca2d37"
+=======
+    "analytics": "2ca025c7-c950-4bf0-a7d5-f873d8cbc13b"
+>>>>>>> 5556fa3fece3c3939bbd2aeb8facbefd5d3cf977
   }
 }

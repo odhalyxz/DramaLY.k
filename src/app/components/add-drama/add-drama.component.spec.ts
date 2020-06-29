@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddDramaComponent } from './add-drama.component';
+import { AddDramaComponent   } from './add-drama.component';
 
 describe('AddDramaComponent', () => {
   let component: AddDramaComponent;
