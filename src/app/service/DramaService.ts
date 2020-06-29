@@ -19,6 +19,13 @@ export class DramaService {
     const asyncResult = await this.http.post(`${ this.url }/kdramas/new-Kdrama`, drama).toPromise();
     console.log(asyncResult);
   }
+
+  // Eliminaru n kdrama
+  deleteKdrama( id: string ) {
+    return this.http.get(`${ this.url }/kdramas/delete/${ id }`);
+    //this.getKdramas();
+
+  }
   // Obtener la lista de todos los dramas
 
   getKdramas() {
@@ -37,6 +44,9 @@ export class DramaService {
     Object.keys( kdramasObj ).forEach( key => {
       const kdrama: DramaModel = kdramasObj[key];
       console.log('kdrama', kdrama);
+      //let iid = kdrama.;
+      kdrama.cont = key;
+      //kdrama.id = iid;
       kdramasList.push( kdrama );
     });
     return kdramasList;

@@ -6,7 +6,9 @@ export class DramaModel {
     network: string;
     writer: string;
     director: string;
+    // tslint:disable-next-line: variable-name
     _id: string;
+    cont: string;
     constructor() {
     }
 }

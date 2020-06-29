@@ -1,10 +1,10 @@
-<h1>Listado de Héroes</h1>
+<h1>Listado de Kdramas</h1>
 <hr>
 
 
 <div class="row">
   <div class="col text-right">
-    <button routerLink="/heroe/nuevo"
+    <button routerLink="/add-Drama"
             class="btn btn-primary">
       <i class="fa fa-plus"></i>
       Agregar
@@ -18,9 +18,9 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Poder</th>
-      <th scope="col">Vivo</th>
+      <th scope="col">Title</th>
+      <th scope="col">Episodes</th>
+      <th scope="col">Release</th>
       <th scope="col">Tools</th>
     </tr>
   </thead>
@@ -28,22 +28,16 @@
     <tr *ngFor="let kdrama of dramas; let i = index">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ kdrama.title }}</td>
+      <td>{{ kdrama.episodes}}</td>
       <td>{{ kdrama.release}}</td>
       <td>
+
         
-       
-      </td>
-      <td>
 
-        <button class="btn btn-info mr-1"
-                [routerLink]="['/heroe', kdrama.writer]">
-          <i class="fa fa-pen"></i>
+        <button class="btn btn-danger"
+                (click)="deleteKdrama( kdrama, i ) ">
+          Delete
         </button>
-
-        <!-- <button class="btn btn-danger"
-                (click)="borrarHeroe( heroe, i ) ">
-          <i class="fa fa-trash"></i>
-        </button> -->
 
 
       </td>
