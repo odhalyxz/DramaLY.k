@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 
-import {DramaModel } from '../../models/Drama.model'
+import { DramaModel } from '../../models/Drama.model';
+import {  DramaService} from '../../service/DramaService';
 
 @Component({
   selector: 'app-add-drama',
@@ -14,7 +15,7 @@ export class AddDramaComponent implements OnInit {
 
   kdrama: DramaModel = new DramaModel();
 
-  constructor() { }
+  constructor(private dramaService: DramaService) { }
 
   ngOnInit(): void {
   }
@@ -24,8 +25,7 @@ export class AddDramaComponent implements OnInit {
       console.log('Formulario no válido');
       return;
     }
-    console.log(form);
-    console.log(this.kdrama);
-    return true;
+    console.log('PETICION', this.kdrama);
+    this.dramaService.crearKdrama( this.kdrama );
   }
 }
