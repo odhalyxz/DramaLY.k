@@ -8,12 +8,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ListDramaComponent } from './components/list-drama/list-drama.component';
 import { AddDramaComponent } from './components/add-drama/add-drama.component';
+import { EditDramaComponent } from './components/edit-drama/edit-drama.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListDramaComponent,
-    AddDramaComponent
+    AddDramaComponent,
+    EditDramaComponent
   ],
   imports: [
     BrowserModule,

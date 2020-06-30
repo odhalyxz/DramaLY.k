@@ -1,0 +1,83 @@
+
+    <div class="container">
+        <div class="py-5 text-center">
+          <!-- <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+          <h2>Upload K-Drama</h2>
+          <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+        </div>
+  
+        <div class="row">
+         
+          <div class="col-md-8 order-md-1">
+              <h4 class="mb-3">Datos de K-drama</h4>
+                <form (ngSubmit)="updateKDrama(f)" #f="ngForm">
+                    <div>
+                        <label>Title</label>
+                        <input type="text"
+                               class="form-control"
+                               [(ngModel)]="kdrama.title"
+                               name="title"
+                               required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Episodes</label>
+                            <input type="text"
+                                   class="form-control"
+                                   [(ngModel)]="kdrama.episodes"
+                                   name="episodes">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Release</label>
+                            <input type="text"
+                                   class="form-control"
+                                   [(ngModel)]="kdrama.release"
+                                   name="release">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Gender</label>
+                            <input type="text"
+                                class="form-control"
+                                [(ngModel)]="kdrama.gender"
+                                name="gender">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Network</label>
+                            <input type="text"
+                                   class="form-control"
+                                   [(ngModel)]="kdrama.network"
+                                   name="network">
+                        </div>
+                    </div>
+                    
+                    <div >
+                        <label>Writer</label>
+                        <input type="text"
+                               class="form-control"
+                               [(ngModel)]="kdrama.writer"
+                               name="writer">
+                    </div>
+                    <div >
+                        <label>Director</label>
+                        <input type="text"
+                               class="form-control"
+                               [(ngModel)]="kdrama.director"
+                               name="director">
+                    </div>
+                    
+                    
+                    <hr class="mb-4">
+                    <div class="center">
+                        <button type="submit"
+                                class="btn btn-primary w-25">
+                          <i class="fa fa-save"></i>
+                          Guardar
+                        </button>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  

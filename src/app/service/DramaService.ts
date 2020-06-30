@@ -48,4 +48,25 @@ export class DramaService {
   deleteKdrama( id: string ) {
     return this.http.get(`${ this.url }/kdramas/delete/${ id }`);
   }
+  // Obtener un kdram por su id
+  getKdrama( id: string ){
+    return this.http.get(`${ this.url }/kdramas/${ id }`);
+  }
+  // Actulizar kdrama
+  async updateKdrama(drama: DramaModel){
+    const id = drama._id;
+    const dramaTemp = {
+      ...drama
+    };
+
+    delete dramaTemp._id;
+
+    console.log('DEsde los serviocs', dramaTemp);
+    
+
+    //return this.http.put(`${ this.url }/heroes/${ heroe.id }.json`, heroeTemp);
+
+    const asyncResult = await this.http.put(`${ this.url }/kdramas/edit/${id}`, dramaTemp).toPromise();
+    //console.log(asyncResult);
+  }
 }
