@@ -27,8 +27,9 @@ export class ListDramaComponent implements OnInit {
   }
 
   deleteKdrama( drama: DramaModel, i: number ) {
-    this.dramas.splice(i, 1);
+    //this.dramas.splice(i, 1);
     this.dramaService.deleteKdrama(drama._id).subscribe();
+    this.ngOnInit();
   }
 
 }

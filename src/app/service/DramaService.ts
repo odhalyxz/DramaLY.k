@@ -20,12 +20,7 @@ export class DramaService {
     console.log(asyncResult);
   }
 
-  // Eliminaru n kdrama
-  deleteKdrama( id: string ) {
-    return this.http.get(`${ this.url }/kdramas/delete/${ id }`);
-    //this.getKdramas();
-
-  }
+  
   // Obtener la lista de todos los dramas
 
   getKdramas() {
@@ -50,5 +45,10 @@ export class DramaService {
       kdramasList.push( kdrama );
     });
     return kdramasList;
+  }
+
+  // Eliminaru n kdrama
+  deleteKdrama( id: string ) {
+    return this.http.get(`${ this.url }/kdramas/delete/${ id }`);
   }
 }
