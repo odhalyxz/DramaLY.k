@@ -19,10 +19,7 @@ export class DramaService {
     const asyncResult = await this.http.post(`${ this.url }/kdramas/new-Kdrama`, drama).toPromise();
     console.log(asyncResult);
   }
-
-  
   // Obtener la lista de todos los dramas
-
   getKdramas() {
     // const asyncResult = await this.http.get(`${ this.url }/kdramas`).toPromise();
     // return asyncResult;
@@ -39,9 +36,9 @@ export class DramaService {
     Object.keys( kdramasObj ).forEach( key => {
       const kdrama: DramaModel = kdramasObj[key];
       console.log('kdrama', kdrama);
-      //let iid = kdrama.;
+      // let iid = kdrama.;
       kdrama.cont = key;
-      //kdrama.id = iid;
+      // kdrama.id = iid;
       kdramasList.push( kdrama );
     });
     return kdramasList;
